@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="tr" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ege Uysal Zeytinyağı</title>
+<meta name="description" content="Ege Uysal Zeytin Zeytinyağı: Natürel Sızma, Erken Hasat ve Taş Baskı zeytinyağı. Siparişler WhatsApp üzerinden.">
+<meta name="theme-color" content="#1F2A12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F5EFDF',
+          parchment: '#EDE3C8',
+          olive: { 900: '#1F2A12', 800: '#2B3818', 700: '#3B4A1E', 500: '#6B7F2A', 300: '#A9B86A' },
+          oil: '#D9C23C',
+          gold: '#E7B23C',
+          terra: '#B5552F',
+          stone: '#8C7B68',
+          sand: '#EADBC0'
+        },
+        fontFamily: {
+          display: ['Fraunces', 'Georgia', 'serif'],
+          sans: ['"DM Sans"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  };
+</script>
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  html, body { overflow-x: clip; }
+  body { background: #F5EFDF; color: #1F2A12; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
+  /* Açılış: başlık harflere bölünene kadar gizli kalsın */
+  .js [data-split] { visibility: hidden; }
+  .word { display: inline-block; white-space: nowrap; }
+  .char { display: inline-block; will-change: transform, opacity; }
+
+  .marquee-track { animation: marquee 28s linear infinite; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  .process-fill { transform-origin: top center; transform: scaleY(0); }
+  .step-video { opacity: 0; transition: opacity 1s ease; }
+  .step-video.is-on { opacity: 1; }
+  .step-dot { transition: background-color .4s ease, transform .4s ease, box-shadow .4s ease; }
+  .step.is-active .step-dot { background: #D9C23C; color: #1F2A12; border-color: #D9C23C; transform: scale(1.15); box-shadow: 0 0 0 8px rgba(217,194,60,.25); }
+  .step-body { transition: opacity .5s ease; opacity: .4; }
+  .step.is-active .step-body { opacity: 1; }
+
+  .story-word { opacity: .16; }
+
+  .btn-wa { transition: transform .25s ease, background-color .25s ease, color .25s ease; }
+  .btn-wa:hover { transform: translateY(-2px); }
+  .card-zoom { transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+  .product-card:hover .card-zoom { transform: scale(1.06); }
+  .card-video { opacity: 0; transition: opacity .5s ease; }
+  .product-card.is-playing .card-video { opacity: 1; }
+
+  /* Header video üstündeyken açık renk, kaydırınca koyu */
+  .site-header { color: #F5EFDF; }
+  .site-header .logo-sub { color: #D9C23C; }
+  .site-header.is-scrolled { color: #1F2A12; background: rgba(245,239,223,.92); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(31,42,18,.08); }
+  .site-header.is-scrolled .logo-sub { color: #6B7F2A; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .js [data-split] { visibility: visible; }
+    .process-fill { transform: scaleY(1); }
+    .step-body, .story-word { opacity: 1; }
+  }
+</style>
+</head>
+<body class="font-sans antialiased">
+
+<!-- Tekrar kullanılan zeytin dalı -->
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <defs>
+    <symbol id="dal" viewBox="0 0 220 220">
+      <path d="M14 206 C60 168 104 128 136 86 C158 58 180 34 206 14" fill="none" stroke="#3B4A1E" stroke-width="4" stroke-linecap="round"/>
+      <g fill="#6B7F2A">
+        <ellipse cx="48" cy="166" rx="26" ry="8" transform="rotate(-70 48 166)"/>
+        <ellipse cx="70" cy="168" rx="26" ry="8" transform="rotate(10 70 168)"/>
+        <ellipse cx="86" cy="124" rx="26" ry="8" transform="rotate(-80 86 124)"/>
+        <ellipse cx="112" cy="128" rx="26" ry="8" transform="rotate(5 112 128)"/>
+        <ellipse cx="126" cy="80" rx="24" ry="7.5" transform="rotate(-85 126 80)"/>
+        <ellipse cx="152" cy="86" rx="24" ry="7.5" transform="rotate(-5 152 86)"/>
+        <ellipse cx="168" cy="40" rx="22" ry="7" transform="rotate(-80 168 40)"/>
+        <ellipse cx="192" cy="44" rx="20" ry="6.5" transform="rotate(-20 192 44)"/>
+      </g>
+      <g fill="#A9B86A" opacity=".6">
+        <ellipse cx="70" cy="168" rx="18" ry="2" transform="rotate(10 70 168)"/>
+        <ellipse cx="112" cy="128" rx="18" ry="2" transform="rotate(5 112 128)"/>
+        <ellipse cx="152" cy="86" rx="16" ry="2" transform="rotate(-5 152 86)"/>
+      </g>
+      <ellipse cx="98" cy="150" rx="10" ry="13" fill="#3D2B3A"/>
+      <ellipse cx="140" cy="108" rx="9" ry="12" fill="#6B7F2A" stroke="#3B4A1E" stroke-width="2"/>
+      <ellipse cx="95" cy="146" rx="3" ry="4" fill="#fff" opacity=".35"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- HEADER -->
+<header class="site-header fixed inset-x-0 top-0 z-50 transition-all duration-300">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8 md:py-4">
+    <a href="#ust" class="flex items-center gap-2" aria-label="Ege Uysal Zeytinyağı ana sayfa">
+      <svg viewBox="0 0 40 40" class="h-9 w-9" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#1F2A12"/><ellipse cx="20" cy="22" rx="8" ry="10.5" fill="#D9C23C"/><path d="M20 12 C22 7 26 5 30 5" stroke="#A9B86A" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="17" cy="19" rx="2.2" ry="3" fill="#fff" opacity=".45"/></svg>
+      <span class="font-display text-lg font-bold leading-none md:text-xl">Ege Uysal<span class="logo-sub block text-[10px] font-sans font-bold uppercase tracking-[.22em]">Zeytin · Zeytinyağı</span></span>
+    </a>
+    <nav class="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Ana menü">
+      <a href="#urunler" class="opacity-90 underline-offset-4 hover:opacity-100 hover:underline">Ürünler</a>
+      <a href="#surec" class="opacity-90 underline-offset-4 hover:opacity-100 hover:underline">Ağaçtan Şişeye</a>
+      <a href="#siparis" class="opacity-90 underline-offset-4 hover:opacity-100 hover:underline">Sipariş</a>
+    </nav>
+    <a href="https://wa.me/905323792890?text=Merhaba%2C%20Ege%20Uysal%20Zeytinya%C4%9F%C4%B1%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn-wa rounded-full bg-oil px-4 py-2.5 text-sm font-bold text-olive-900 hover:bg-cream md:px-6">Sipariş Ver</a>
+  </div>
+</header>
+
+<main id="ust">
+
+  <!-- HERO: tam ekran video -->
+  <section class="hero relative h-[100svh] min-h-[560px] overflow-hidden bg-olive-900 text-cream">
+    <div class="hero-media absolute inset-0">
+      <video class="hero-video h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+      <script>
+        // Telefonda dikey kırpılmış hafif sürüm, geniş ekranda 1080p
+        (function () {
+          var v = document.querySelector('.hero-video');
+          var dar = window.matchMedia('(max-width: 767px)').matches;
+          v.poster = dar ? 'assets/hero-poster-mobil.jpg' : 'assets/hero-poster.jpg';
+          v.src = dar ? 'assets/hero-mobil.mp4' : 'assets/hero.mp4';
+        })();
+      </script>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-olive-900/90 via-olive-900/30 to-olive-900/20" aria-hidden="true"></div>
+    <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-olive-900/70 to-transparent" aria-hidden="true"></div>
+
+    <div class="hero-content relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-24 md:px-8 md:pb-20">
+      <p class="hero-eyebrow mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-cream/30 bg-olive-900/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[.2em] backdrop-blur-sm">
+        <span class="h-2 w-2 rounded-full bg-oil"></span> Soğuk sıkım · Kendi mahsulümüz
+      </p>
+      <h1 class="font-display text-[17vw] font-black leading-[.9] tracking-tight md:text-[8.5vw] xl:text-[128px]">
+        <span class="block" data-split>Dalından</span>
+        <span class="block italic text-oil" data-split>sofranıza.</span>
+      </h1>
+      <div class="mt-6 flex flex-col gap-6 md:mt-8 md:flex-row md:items-end md:justify-between">
+        <p class="hero-sub max-w-md text-base leading-relaxed text-cream/85 md:text-lg">
+          Ege'nin bereketli topraklarından, katkısız ve doğal zeytinyağı. Natürel Sızma, Erken Hasat ve Taş Baskı.
+        </p>
+        <div class="hero-cta flex flex-wrap gap-3">
+          <a href="https://wa.me/905323792890?text=Merhaba%2C%20Ege%20Uysal%20Zeytinya%C4%9F%C4%B1%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn-wa inline-flex min-w-[220px] items-center justify-center gap-2 rounded-full bg-oil px-8 py-4 font-bold uppercase tracking-[.12em] text-olive-900 hover:bg-cream">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+            Sipariş Ver
+          </a>
+          <a href="#urunler" class="btn-wa inline-flex items-center rounded-full border-2 border-cream/70 px-7 py-4 font-bold hover:bg-cream hover:text-olive-900">Ürünleri Gör</a>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="video-toggle absolute right-4 top-24 z-20 grid h-11 w-11 place-items-center rounded-full border border-cream/40 bg-olive-900/40 text-cream backdrop-blur-sm hover:bg-olive-900/70 md:bottom-8 md:right-8 md:top-auto" aria-label="Videoyu durdur">
+      <svg viewBox="0 0 24 24" class="icon-pause h-4 w-4" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg viewBox="0 0 24 24" class="icon-play hidden h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5Z"/></svg>
+    </button>
+  </section>
+
+  <!-- KAYAN BANT -->
+  <div class="relative overflow-hidden border-y-2 border-olive-900 bg-olive-900 py-4 text-cream" aria-hidden="true">
+    <div class="marquee-track flex w-max gap-10 whitespace-nowrap font-display text-2xl font-bold md:text-4xl">
+      <span>Natürel Sızma</span><span class="text-oil">✦</span><span>Erken Hasat</span><span class="text-oil">✦</span><span>Taş Baskı</span><span class="text-oil">✦</span><span class="italic">Ege'den sofrana</span><span class="text-oil">✦</span>
+      <span>Natürel Sızma</span><span class="text-oil">✦</span><span>Erken Hasat</span><span class="text-oil">✦</span><span>Taş Baskı</span><span class="text-oil">✦</span><span class="italic">Ege'den sofrana</span><span class="text-oil">✦</span>
+    </div>
+  </div>
+
+  <!-- ÜRÜNLER -->
+  <section id="urunler" class="relative scroll-mt-20 py-20 md:py-32">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="mb-12 flex flex-col justify-between gap-4 md:mb-16 md:flex-row md:items-end">
+        <h2 class="reveal-up font-display text-5xl font-black leading-none md:text-7xl">Üç yağ,<br><span class="italic text-olive-500">üç karakter.</span></h2>
+        <p class="reveal-up max-w-sm text-olive-800">Her biri farklı bir hasat ve sıkım anlayışından gelir. Sofranıza, damak zevkinize hangisi uyuyorsa.</p>
+      </div>
+
+      <div class="product-grid grid gap-6 md:grid-cols-3">
+        <!-- Natürel Sızma -->
+        <article class="product-card flex flex-col overflow-hidden rounded-[2rem] bg-gold">
+          <div class="relative h-80 overflow-hidden md:h-[26rem]">
+            <div class="card-zoom absolute inset-0"><img src="assets/urun-naturel-sizma.jpg" alt="Ege Uysal Natürel Sızma soğuk sıkım zeytinyağı tenekesi, yanında bir kase zeytinyağı ve ekmek" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/urun-naturel-sizma.mp4" type="video/mp4"></video></div>
+          </div>
+          <div class="flex flex-1 flex-col bg-cream/60 p-6 md:p-7">
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-olive-700">Günlük kullanım</p>
+            <h3 class="mt-2 border-b-2 border-olive-900 pb-3 font-display text-3xl font-black">Natürel Sızma</h3>
+            <p class="mt-4 font-display text-lg italic">Her güne, her sofraya.</p>
+            <ul class="mt-4 space-y-2 text-sm text-olive-800">
+              <li><b>Lezzet:</b> Dengeli, meyvemsi</li>
+              <li><b>Kullanım:</b> Kahvaltı, salata, sıcak yemekler</li>
+              <li><b>Sıkım:</b> Soğuk sıkım, katkısız</li>
+            </ul>
+            <a href="https://wa.me/905323792890?text=Merhaba%2C%20Nat%C3%BCrel%20S%C4%B1zma%20zeytinya%C4%9F%C4%B1%20sipari%C5%9F%20etmek%20istiyorum.%20Fiyat%20ve%20hacim%20se%C3%A7eneklerini%20%C3%B6%C4%9Frenebilir%20miyim%3F" target="_blank" rel="noopener" class="btn-wa mt-6 inline-flex items-center justify-between rounded-full bg-olive-900 px-6 py-4 font-bold text-cream hover:bg-olive-700">Sipariş Ver <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- Erken Hasat -->
+        <article class="product-card flex flex-col overflow-hidden rounded-[2rem] bg-olive-500">
+          <div class="relative h-80 overflow-hidden md:h-[26rem]">
+            <div class="card-zoom absolute inset-0"><img src="assets/urun-erken-hasat.jpg" alt="Ege Uysal Erken Hasat soğuk sıkım zeytinyağı şişesi, gün batımında zeytinlikte" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/urun-erken-hasat.mp4" type="video/mp4"></video></div>
+          </div>
+          <div class="flex flex-1 flex-col bg-cream/60 p-6 md:p-7">
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-olive-700">Hasadın ilk günleri</p>
+            <h3 class="mt-2 border-b-2 border-olive-900 pb-3 font-display text-3xl font-black">Erken Hasat</h3>
+            <p class="mt-4 font-display text-lg italic">Yeşil zeytinin keskin ilk hali.</p>
+            <ul class="mt-4 space-y-2 text-sm text-olive-800">
+              <li><b>Lezzet:</b> Yoğun, hafif acı, boğazda yakıcı</li>
+              <li><b>Kullanım:</b> Çiğ tüketim, ekmek banmak, son dokunuş</li>
+              <li><b>Sıkım:</b> Soğuk sıkım, katkısız</li>
+            </ul>
+            <a href="https://wa.me/905323792890?text=Merhaba%2C%20Erken%20Hasat%20zeytinya%C4%9F%C4%B1%20sipari%C5%9F%20etmek%20istiyorum.%20Fiyat%20ve%20hacim%20se%C3%A7eneklerini%20%C3%B6%C4%9Frenebilir%20miyim%3F" target="_blank" rel="noopener" class="btn-wa mt-6 inline-flex items-center justify-between rounded-full bg-olive-900 px-6 py-4 font-bold text-cream hover:bg-olive-700">Sipariş Ver <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- Taş Baskı -->
+        <article class="product-card flex flex-col overflow-hidden rounded-[2rem] bg-terra">
+          <div class="relative h-80 overflow-hidden md:h-[26rem]">
+            <div class="card-zoom absolute inset-0"><img src="assets/urun-tas-baski.jpg" alt="Ege Uysal Taş Baskı natürel sızma zeytinyağı şişesi, eski bir taş değirmenin yanında" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/urun-tas-baski.mp4" type="video/mp4"></video></div>
+          </div>
+          <div class="flex flex-1 flex-col bg-cream/60 p-6 md:p-7">
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-olive-700">Geleneksel yöntem</p>
+            <h3 class="mt-2 border-b-2 border-olive-900 pb-3 font-display text-3xl font-black">Taş Baskı</h3>
+            <p class="mt-4 font-display text-lg italic">Eski usul, sabırla.</p>
+            <ul class="mt-4 space-y-2 text-sm text-olive-800">
+              <li><b>Lezzet:</b> Yumuşak, yuvarlak, derin</li>
+              <li><b>Kullanım:</b> Zeytinyağlılar, mezeler, kahvaltı</li>
+            </ul>
+            <a href="https://wa.me/905323792890?text=Merhaba%2C%20Ta%C5%9F%20Bask%C4%B1%20zeytinya%C4%9F%C4%B1%20sipari%C5%9F%20etmek%20istiyorum.%20Fiyat%20ve%20hacim%20se%C3%A7eneklerini%20%C3%B6%C4%9Frenebilir%20miyim%3F" target="_blank" rel="noopener" class="btn-wa mt-6 inline-flex items-center justify-between rounded-full bg-olive-900 px-6 py-4 font-bold text-cream hover:bg-olive-700">Sipariş Ver <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HİKAYE -->
+  <section class="relative overflow-hidden bg-sand py-24 text-olive-900 md:py-40">
+    <div class="pointer-events-none absolute -left-20 top-10 w-56 opacity-25 md:w-96" data-speed="-0.4" aria-hidden="true"><svg viewBox="0 0 220 220" class="w-full"><use href="#dal"/></svg></div>
+    <div class="pointer-events-none absolute -bottom-16 -right-16 w-56 rotate-180 opacity-25 md:w-96" data-speed="-0.25" aria-hidden="true"><svg viewBox="0 0 220 220" class="w-full"><use href="#dal"/></svg></div>
+    <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-12 md:px-8">
+      <div class="md:col-span-8">
+        <p class="mb-6 text-xs font-bold uppercase tracking-[.25em] text-terra">Bizim hikayemiz</p>
+        <p class="story-text font-display text-4xl font-bold leading-[1.1] md:text-6xl">Zeytin acele sevmez. Ağaç yıllarca bekler, biz de onu bekleriz. Şişedeki her damla, Ege toprağının sabrıdır.</p>
+      </div>
+      <div class="mx-auto w-60 md:col-span-4 md:w-72 lg:w-80" data-speed="-0.15">
+        <img src="assets/hikaye-sise.jpg" alt="Yaşlı bir zeytin ağacının dibinde yeni toplanmış zeytin kasaları ve Ege Uysal Natürel Sızma zeytinyağı tenekesi" loading="lazy" class="w-full rounded-[2rem] shadow-2xl shadow-olive-900/30 ring-1 ring-olive-900/10">
+      </div>
+    </div>
+  </section>
+
+  <!-- AĞAÇTAN ŞİŞEYE -->
+  <section id="surec" class="relative scroll-mt-20 bg-olive-900 py-20 text-cream md:py-32">
+    <!-- Arka plan: her adımın kendi videosu, ekrana sabit; aktif adıma göre yumuşak geçiş -->
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="sticky top-0 h-[100svh] overflow-hidden">
+        <video class="step-video absolute inset-0 h-full w-full object-cover is-on" muted loop playsinline preload="auto" poster="assets/surec-1.jpg"><source src="assets/surec-1.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-2.jpg"><source src="assets/surec-2.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-3.jpg"><source src="assets/surec-3.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-4.jpg"><source src="assets/surec-4.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-5.jpg"><source src="assets/surec-5.mp4" type="video/mp4"></video>
+        <div class="absolute inset-0 bg-olive-900/60"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-olive-900/80 via-olive-900/30 to-olive-900/70"></div>
+      </div>
+    </div>
+
+    <div class="relative mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-12 md:px-8">
+      <div class="md:col-span-5">
+        <div class="md:sticky md:top-32">
+          <h2 class="reveal-up font-display text-5xl font-black leading-none md:text-7xl">Ağaçtan<br><span class="italic text-oil">şişeye.</span></h2>
+          <p class="reveal-up mt-6 max-w-sm text-cream/80">Bir damla zeytinyağının sofranıza gelene kadar geçtiği yol. Aşağı kaydırdıkça çizgi dolar, yolculuk ilerler.</p>
+          <p class="reveal-up mt-10 hidden items-baseline gap-4 md:flex" aria-hidden="true">
+            <span class="current-step-no font-display text-6xl font-black text-oil">01</span>
+            <span class="current-step-name font-display text-2xl italic">Hasat</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="process-list relative md:col-span-7">
+        <div class="absolute bottom-6 left-[19px] top-6 w-[4px] rounded-full bg-cream/15" aria-hidden="true">
+          <div class="process-fill h-full w-full rounded-full bg-gradient-to-b from-olive-500 via-oil to-gold"></div>
+        </div>
+        <ol>
+
+        <li class="step relative min-h-[55vh] pb-14 pl-16 md:pl-20">
+          <span class="step-dot absolute left-0 top-0 grid h-11 w-11 place-items-center rounded-full border-[3px] border-cream/70 bg-olive-900 font-bold">1</span>
+          <div class="step-body">
+            <h3 class="font-display text-3xl font-black">Hasat</h3>
+            <p class="mt-2 max-w-md text-cream/80">Zeytinler doğru olgunluğa ulaştığında, dala zarar vermeden toplanır. Erken Hasat için zeytin henüz yeşilken dalından alınır.</p>
+          </div>
+        </li>
+        <li class="step relative min-h-[55vh] pb-14 pl-16 md:pl-20">
+          <span class="step-dot absolute left-0 top-0 grid h-11 w-11 place-items-center rounded-full border-[3px] border-cream/70 bg-olive-900 font-bold">2</span>
+          <div class="step-body">
+            <h3 class="font-display text-3xl font-black">Ayıklama ve yıkama</h3>
+            <p class="mt-2 max-w-md text-cream/80">Toplanan zeytin yaprak ve daldan ayrılır, temiz suyla yıkanır. Sıkıma sadece zeytin girer.</p>
+          </div>
+        </li>
+        <li class="step relative min-h-[55vh] pb-14 pl-16 md:pl-20">
+          <span class="step-dot absolute left-0 top-0 grid h-11 w-11 place-items-center rounded-full border-[3px] border-cream/70 bg-olive-900 font-bold">3</span>
+          <div class="step-body">
+            <h3 class="font-display text-3xl font-black">Ezme ve sıkım</h3>
+            <p class="mt-2 max-w-md text-cream/80">Zeytin ezilip hamur haline getirilir, yağ hamurdan ayrılır. Taş Baskı'da bu iş geleneksel taş değirmenlerle, yavaşça yapılır.</p>
+          </div>
+        </li>
+        <li class="step relative min-h-[55vh] pb-14 pl-16 md:pl-20">
+          <span class="step-dot absolute left-0 top-0 grid h-11 w-11 place-items-center rounded-full border-[3px] border-cream/70 bg-olive-900 font-bold">4</span>
+          <div class="step-body">
+            <h3 class="font-display text-3xl font-black">Dinlendirme</h3>
+            <p class="mt-2 max-w-md text-cream/80">Yeni sıkılan yağ dinlendirilir, tortusundan ayrılır ve süzülür. Berrak, temiz bir tat için sabır gerekir.</p>
+          </div>
+        </li>
+        <li class="step relative pl-16 md:pl-20">
+          <span class="step-dot absolute left-0 top-0 grid h-11 w-11 place-items-center rounded-full border-[3px] border-cream/70 bg-olive-900 font-bold">5</span>
+          <div class="step-body">
+            <h3 class="font-display text-3xl font-black">Şişeleme</h3>
+            <p class="mt-2 max-w-md text-cream/80">Zeytinyağı ışıktan ve havadan korunarak şişelenir, sipariş üzerine sofranıza yola çıkar.</p>
+          </div>
+        </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- SİPARİŞ: zeytin dalı fotoğrafı üstünde -->
+  <section id="siparis" class="relative scroll-mt-20 overflow-hidden bg-olive-900 py-20 text-cream md:py-32">
+    <div class="absolute inset-0" aria-hidden="true">
+      <img src="assets/siparis-arka.jpg" alt="" loading="lazy" class="absolute inset-x-0 -top-[10%] h-[120%] w-full object-cover" data-speed="-0.12">
+    </div>
+    <div class="absolute inset-0 bg-olive-900/45" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-olive-900/90 via-olive-900/60 to-olive-900/10" aria-hidden="true"></div>
+
+    <div class="relative mx-auto grid max-w-7xl gap-14 px-4 md:px-8 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-8">
+        <h2 class="reveal-up font-display text-5xl font-black leading-none md:text-7xl">Sipariş,<br><span class="italic text-oil">bir mesaj uzağında.</span></h2>
+        <p class="reveal-up mt-6 max-w-lg text-cream/80">Ürünü seçin, WhatsApp'tan yazın. Fiyat, hacim seçenekleri ve gönderim bilgisini size hemen iletelim.</p>
+
+        <div class="order-list mt-12 divide-y divide-cream/25 border-y border-cream/25">
+        <a href="https://wa.me/905323792890?text=Merhaba%2C%20Nat%C3%BCrel%20S%C4%B1zma%20zeytinya%C4%9F%C4%B1%20sipari%C5%9F%20etmek%20istiyorum.%20Fiyat%20ve%20hacim%20se%C3%A7eneklerini%20%C3%B6%C4%9Frenebilir%20miyim%3F" target="_blank" rel="noopener" class="order-row group flex items-center justify-between gap-4 py-6">
+          <span class="font-display text-3xl font-black transition-transform duration-300 group-hover:translate-x-2 md:text-5xl">Natürel Sızma</span>
+          <span class="btn-wa shrink-0 rounded-full bg-oil px-5 py-3 text-sm font-bold text-olive-900 group-hover:bg-cream md:px-7 md:text-base">Sipariş Ver →</span>
+        </a>
+        <a href="https://wa.me/905323792890?text=Merhaba%2C%20Erken%20Hasat%20zeytinya%C4%9F%C4%B1%20sipari%C5%9F%20etmek%20istiyorum.%20Fiyat%20ve%20hacim%20se%C3%A7eneklerini%20%C3%B6%C4%9Frenebilir%20miyim%3F" target="_blank" rel="noopener" class="order-row group flex items-center justify-between gap-4 py-6">
+          <span class="font-display text-3xl font-black transition-transform duration-300 group-hover:translate-x-2 md:text-5xl">Erken Hasat</span>
+          <span class="btn-wa shrink-0 rounded-full bg-oil px-5 py-3 text-sm font-bold text-olive-900 group-hover:bg-cream md:px-7 md:text-base">Sipariş Ver →</span>
+        </a>
+        <a href="https://wa.me/905323792890?text=Merhaba%2C%20Ta%C5%9F%20Bask%C4%B1%20zeytinya%C4%9F%C4%B1%20sipari%C5%9F%20etmek%20istiyorum.%20Fiyat%20ve%20hacim%20se%C3%A7eneklerini%20%C3%B6%C4%9Frenebilir%20miyim%3F" target="_blank" rel="noopener" class="order-row group flex items-center justify-between gap-4 py-6">
+          <span class="font-display text-3xl font-black transition-transform duration-300 group-hover:translate-x-2 md:text-5xl">Taş Baskı</span>
+          <span class="btn-wa shrink-0 rounded-full bg-oil px-5 py-3 text-sm font-bold text-olive-900 group-hover:bg-cream md:px-7 md:text-base">Sipariş Ver →</span>
+        </a>
+        </div>
+
+        <p class="reveal-up mt-8 max-w-2xl text-cream/75">Sofralık zeytin (siyah yağlı duble, yeşil limonlu çizik), zeytinyağı sabunu ve kuru incir için de bize yazabilirsiniz.</p>
+
+        <div class="reveal-up mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <a href="https://wa.me/905323792890?text=Merhaba%2C%20Ege%20Uysal%20Zeytinya%C4%9F%C4%B1%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" class="btn-wa inline-flex items-center justify-center gap-3 rounded-full bg-oil px-8 py-5 text-lg font-bold text-olive-900 hover:bg-cream">
+            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+            WhatsApp: 0532 379 28 90
+          </a>
+          <a href="https://www.instagram.com/egeuysalzeytinzeytinyag/" target="_blank" rel="noopener" class="font-bold underline decoration-oil decoration-2 underline-offset-4 hover:text-oil">Instagram'da takip et: @egeuysalzeytinzeytinyag</a>
+        </div>
+      </div>
+
+      <aside class="reveal-up lg:col-span-4" aria-label="Sipariş bilgileri">
+        <div class="mx-auto max-w-sm rounded-[2rem] border border-cream/35 bg-olive-900/25 p-5 backdrop-blur-md">
+          <p class="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[.2em]"><span class="h-2 w-2 animate-pulse rounded-full bg-oil"></span> Yeni sezon · Taze hasat</p>
+          <img src="assets/urun-erken-hasat.jpg" alt="Ege Uysal Erken Hasat zeytinyağı şişesi" loading="lazy" class="mt-4 aspect-square w-full rounded-2xl object-cover">
+          <p class="mt-4 text-center font-display text-xl font-bold">Ege Uysal Zeytin Zeytinyağı</p>
+          <div class="my-4 border-t border-dashed border-cream/40"></div>
+          <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
+            <dt class="text-cream/60">Kargo</dt><dd class="text-right font-bold">Türkiye'nin her yerine</dd>
+            <dt class="text-cream/60">Ödeme</dt><dd class="text-right font-bold">Kapıda ödeme</dd>
+            <dt class="text-cream/60">Toplu alım</dt><dd class="text-right font-bold">Özel fiyat</dd>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-olive-900 pb-24 pt-14 text-cream md:pb-14">
+  <div class="mx-auto flex max-w-7xl flex-col gap-8 px-4 md:flex-row md:items-end md:justify-between md:px-8">
+    <div>
+      <p class="font-display text-4xl font-black md:text-6xl">Ege Uysal</p>
+      <p class="mt-1 text-xs font-bold uppercase tracking-[.25em] text-oil">Zeytin · Zeytinyağı</p>
+    </div>
+    <nav class="flex flex-wrap gap-x-8 gap-y-3 text-sm" aria-label="Alt menü">
+      <a href="#urunler" class="hover:text-oil">Ürünler</a>
+      <a href="#surec" class="hover:text-oil">Ağaçtan Şişeye</a>
+      <a href="#siparis" class="hover:text-oil">Sipariş</a>
+      <a href="https://www.instagram.com/egeuysalzeytinzeytinyag/" target="_blank" rel="noopener" class="hover:text-oil">Instagram</a>
+    </nav>
+    <p class="text-sm text-cream/60">© 2026 Ege Uysal Zeytin Zeytinyağı</p>
+  </div>
+</footer>
+
+<!-- Mobilde sabit WhatsApp butonu -->
+<a href="https://wa.me/905323792890?text=Merhaba%2C%20Ege%20Uysal%20Zeytinya%C4%9F%C4%B1%20i%C3%A7in%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile sipariş ver" class="fixed bottom-4 right-4 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg shadow-olive-900/30 md:hidden">
+  <svg viewBox="0 0 24 24" class="h-7 w-7" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.7.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function () {
+  // Başlığı harflere böl (kelimeler satır sonunda bölünmesin)
+  var chars = [];
+  document.querySelectorAll('[data-split]').forEach(function (el) {
+    var words = el.textContent.trim().split(/\s+/);
+    el.textContent = '';
+    words.forEach(function (w, i) {
+      var word = document.createElement('span');
+      word.className = 'word';
+      Array.from(w).forEach(function (c) {
+        var ch = document.createElement('span');
+        ch.className = 'char';
+        ch.textContent = c;
+        word.appendChild(ch);
+        chars.push(ch);
+      });
+      el.appendChild(word);
+      if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
+    });
+    el.setAttribute('aria-label', words.join(' '));
+    el.style.visibility = 'visible';
+  });
+
+  // Hikaye metnini kelimelere böl
+  var story = document.querySelector('.story-text');
+  var storyWords = story.textContent.trim().split(/\s+/);
+  story.innerHTML = storyWords.map(function (w) { return '<span class="story-word">' + w + '</span>'; }).join(' ');
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Video durdur / oynat
+  var heroVideo = document.querySelector('.hero-video');
+  var toggle = document.querySelector('.video-toggle');
+  function setPlaying(play) {
+    document.querySelectorAll('.hero-video').forEach(function (v) { if (play) { v.play().catch(function () {}); } else { v.pause(); } });
+    toggle.querySelector('.icon-pause').classList.toggle('hidden', !play);
+    toggle.querySelector('.icon-play').classList.toggle('hidden', play);
+    toggle.setAttribute('aria-label', play ? 'Videoyu durdur' : 'Videoyu oynat');
+  }
+  toggle.addEventListener('click', function () { setPlaying(heroVideo.paused); });
+  if (reduce) setPlaying(false);
+
+  // Ürün kartları: fareyle üstüne gelince video oynar; dokunmatikte kart ekranın ortasına gelince
+  if (!reduce) {
+    var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    document.querySelectorAll('.product-card').forEach(function (card) {
+      var v = card.querySelector('.card-video');
+      function play() { card.classList.add('is-playing'); v.play().catch(function () {}); }
+      function stop() { card.classList.remove('is-playing'); v.pause(); }
+      if (canHover) {
+        card.addEventListener('mouseenter', play);
+        card.addEventListener('mouseleave', stop);
+        card.addEventListener('focusin', play);
+        card.addEventListener('focusout', stop);
+      } else if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { play(); } else { stop(); } });
+        }, { threshold: 0.6 }).observe(card);
+      }
+    });
+  }
+
+  if (!window.gsap || reduce) {
+    document.querySelectorAll('.step').forEach(function (s) { s.classList.add('is-active'); });
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Lenis yumuşak kaydırma, ScrollTrigger ile senkron
+  if (window.Lenis) {
+    var lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var id = a.getAttribute('href');
+        var target = id === '#ust' ? 0 : document.querySelector(id);
+        if (target === null) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: -70, duration: 1.4 });
+      });
+    });
+  }
+
+  // Açılış: harf harf başlık, sonra şişeler
+  var intro = gsap.timeline({ defaults: { ease: 'power4.out' } });
+  intro
+    .from('.hero-eyebrow', { y: 20, opacity: 0, duration: .6 })
+    .from(chars, { yPercent: 120, opacity: 0, rotate: 10, duration: .9, stagger: .045 }, '-=.2')
+    .from('.hero-sub, .hero-cta', { y: 24, opacity: 0, duration: .8, stagger: .12 }, '-=.5');
+  gsap.from('.hero-media', { scale: 1.15, duration: 2.4, ease: 'power2.out' });
+
+  // Hero: video yavaş, yazı hızlı kayar ve kaybolur
+  gsap.to('.hero-video', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-content', { yPercent: -25, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+  // Paralaks: data-speed taşıyan her öğe kendi hızında kayar
+  gsap.utils.toArray('[data-speed]').forEach(function (el) {
+    var speed = parseFloat(el.getAttribute('data-speed'));
+    var section = el.closest('section') || el;
+    // Hero sayfa en üstteyken yerinde başlar; diğerleri ekranın ortasında yerine oturur
+    if (section === document.querySelector('main > section')) {
+      gsap.to(el, { yPercent: speed * 100, ease: 'none', scrollTrigger: { trigger: section, start: 'top top', end: 'bottom top', scrub: true } });
+    } else {
+      gsap.fromTo(el, { yPercent: -speed * 50 }, { yPercent: speed * 50, ease: 'none', scrollTrigger: { trigger: section, start: 'top bottom', end: 'bottom top', scrub: true } });
+    }
+  });
+
+  // Başlık ve paragraflar aşağıdan gelsin
+  gsap.utils.toArray('.reveal-up').forEach(function (el) {
+    gsap.from(el, { y: 50, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+  });
+
+  // Ürün kartları sırayla
+  gsap.set('.product-card', { y: 90, opacity: 0 });
+  ScrollTrigger.batch('.product-card', {
+    start: 'top 85%',
+    once: true,
+    onEnter: function (batch) {
+      gsap.to(batch, { y: 0, opacity: 1, duration: 1, stagger: .18, ease: 'power3.out' });
+    }
+  });
+
+  // Hikaye: kelimeler kaydırdıkça aydınlansın
+  gsap.to('.story-word', {
+    opacity: 1,
+    stagger: .1,
+    ease: 'none',
+    scrollTrigger: { trigger: '.story-text', start: 'top 80%', end: 'bottom 45%', scrub: true }
+  });
+
+  // Süreç çizgisi kaydırmayla dolsun, adımlar sırayla yansın
+  gsap.to('.process-fill', {
+    scaleY: 1,
+    ease: 'none',
+    scrollTrigger: { trigger: '.process-list', start: 'top 60%', end: 'bottom 60%', scrub: true }
+  });
+  var steps = gsap.utils.toArray('.step');
+  var stepVideos = gsap.utils.toArray('.step-video');
+  var stepNo = document.querySelector('.current-step-no');
+  var stepName = document.querySelector('.current-step-name');
+  var shown = -1;
+  function syncStep() {
+    var i = Math.max(0, document.querySelectorAll('.step.is-active').length - 1);
+    if (i === shown) return;
+    shown = i;
+    stepVideos.forEach(function (v, j) {
+      v.classList.toggle('is-on', j === i);
+      if (j === i) { v.play().catch(function () {}); } else { v.pause(); }
+    });
+    // Sıradaki adımın videosunu önceden yüklemeye başla
+    if (stepVideos[i + 1]) stepVideos[i + 1].preload = 'auto';
+    stepNo.textContent = '0' + (i + 1);
+    stepName.textContent = steps[i].querySelector('h3').textContent;
+  }
+  // Bölüm ekranda değilken videolar dursun
+  ScrollTrigger.create({
+    trigger: '#surec',
+    start: 'top bottom',
+    end: 'bottom top',
+    onToggle: function (self) {
+      if (self.isActive) { shown = -1; syncStep(); } else { stepVideos.forEach(function (v) { v.pause(); }); }
+    }
+  });
+  steps.forEach(function (step) {
+    ScrollTrigger.create({
+      trigger: step,
+      start: 'top 60%',
+      onEnter: function () { step.classList.add('is-active'); syncStep(); },
+      onLeaveBack: function () { step.classList.remove('is-active'); syncStep(); }
+    });
+    gsap.from(step, { x: 40, opacity: 0, duration: .8, ease: 'power3.out', scrollTrigger: { trigger: step, start: 'top 85%' } });
+  });
+
+  // Sipariş satırları
+  gsap.from('.order-row', {
+    y: 40, opacity: 0, duration: .8, stagger: .12, ease: 'power3.out',
+    scrollTrigger: { trigger: '.order-list', start: 'top 85%' }
+  });
+
+  // Kaydırınca header zemini
+  ScrollTrigger.create({
+    trigger: '.hero',
+    start: 'bottom 80px',
+    onEnter: function () { document.querySelector('.site-header').classList.add('is-scrolled'); },
+    onLeaveBack: function () { document.querySelector('.site-header').classList.remove('is-scrolled'); }
+  });
+
+  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
