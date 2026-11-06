@@ -62,6 +62,11 @@
   .btn-wa:hover { transform: translateY(-2px); }
   .card-zoom { transition: transform .7s cubic-bezier(.2,.8,.2,1); }
   .product-card:hover .card-zoom { transform: scale(1.06); }
+  /* iOS otomatik oynatmayı engellediğinde ortaya çıkan oynat işaretini gizle; poster görünür kalır */
+  video::-webkit-media-controls,
+  video::-webkit-media-controls-start-playback-button,
+  video::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; }
+
   .card-video { opacity: 0; transition: opacity .5s ease; }
   .product-card.is-playing .card-video { opacity: 1; }
 
@@ -165,10 +170,6 @@
       </div>
     </div>
 
-    <button type="button" class="video-toggle absolute right-4 top-24 z-20 grid h-11 w-11 place-items-center rounded-full border border-cream/40 bg-olive-900/40 text-cream backdrop-blur-sm hover:bg-olive-900/70 md:bottom-8 md:right-8 md:top-auto" aria-label="Videoyu durdur">
-      <svg viewBox="0 0 24 24" class="icon-pause h-4 w-4" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-      <svg viewBox="0 0 24 24" class="icon-play hidden h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.9l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5Z"/></svg>
-    </button>
   </section>
 
   <!-- KAYAN BANT -->
@@ -442,25 +443,48 @@
   story.innerHTML = storyWords.map(function (w) { return '<span class="story-word">' + w + '</span>'; }).join(' ');
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // Video durdur / oynat
-  var heroVideo = document.querySelector('.hero-video');
-  var toggle = document.querySelector('.video-toggle');
-  function setPlaying(play) {
-    document.querySelectorAll('.hero-video').forEach(function (v) { if (play) { v.play().catch(function () {}); } else { v.pause(); } });
-    toggle.querySelector('.icon-pause').classList.toggle('hidden', !play);
-    toggle.querySelector('.icon-play').classList.toggle('hidden', play);
-    toggle.setAttribute('aria-label', play ? 'Videoyu durdur' : 'Videoyu oynat');
+  // Videolar: iOS (ör. Düşük Güç Modu) otomatik oynatmayı engellerse,
+  // o an oynaması gereken videolar her dokunuşta yeniden denenir
+  var wanted = [];
+  function want(v) {
+    if (wanted.indexOf(v) < 0) wanted.push(v);
+    v.muted = true;
+    v.play().catch(function () {});
   }
-  toggle.addEventListener('click', function () { setPlaying(heroVideo.paused); });
-  if (reduce) setPlaying(false);
+  function unwant(v) {
+    var i = wanted.indexOf(v);
+    if (i > -1) wanted.splice(i, 1);
+    v.pause();
+  }
+  function retry() {
+    wanted.forEach(function (v) { if (v.paused) v.play().catch(function () {}); });
+  }
+  ['touchend', 'click', 'keydown'].forEach(function (ev) {
+    document.addEventListener(ev, retry, { passive: true });
+  });
+
+  var heroVideo = document.querySelector('.hero-video');
+  if (reduce) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
+  } else if ('IntersectionObserver' in window) {
+    // Hero ekrandayken oynasın, aşağı inince dursun
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { want(heroVideo); } else { unwant(heroVideo); } });
+    }).observe(heroVideo);
+  } else {
+    want(heroVideo);
+  }
 
   // Ürün kartları: fareyle üstüne gelince video oynar; dokunmatikte kart ekranın ortasına gelince
   if (!reduce) {
     var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     document.querySelectorAll('.product-card').forEach(function (card) {
       var v = card.querySelector('.card-video');
-      function play() { card.classList.add('is-playing'); v.play().catch(function () {}); }
-      function stop() { card.classList.remove('is-playing'); v.pause(); }
+      // Fotoğraf, video gerçekten oynamaya başlayınca kaybolur
+      v.addEventListener('playing', function () { card.classList.add('is-playing'); });
+      function play() { want(v); }
+      function stop() { unwant(v); card.classList.remove('is-playing'); }
       if (canHover) {
         card.addEventListener('mouseenter', play);
         card.addEventListener('mouseleave', stop);
@@ -562,7 +586,7 @@
     shown = i;
     stepVideos.forEach(function (v, j) {
       v.classList.toggle('is-on', j === i);
-      if (j === i) { v.play().catch(function () {}); } else { v.pause(); }
+      if (j === i) { want(v); } else { unwant(v); }
     });
     // Sıradaki adımın videosunu önceden yüklemeye başla
     if (stepVideos[i + 1]) stepVideos[i + 1].preload = 'auto';
@@ -575,7 +599,7 @@
     start: 'top bottom',
     end: 'bottom top',
     onToggle: function (self) {
-      if (self.isActive) { shown = -1; syncStep(); } else { stepVideos.forEach(function (v) { v.pause(); }); }
+      if (self.isActive) { shown = -1; syncStep(); } else { stepVideos.forEach(function (v) { unwant(v); }); }
     }
   });
   steps.forEach(function (step) {
