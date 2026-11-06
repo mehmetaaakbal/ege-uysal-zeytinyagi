@@ -459,6 +459,8 @@
       img.alt = '';
       img.setAttribute('aria-hidden', 'true');
       img.className = v.className.replace('opacity-0', '');
+      // Sadece hero hemen insin; diğerleri bölümüne yaklaşınca
+      if (!v.classList.contains('hero-video')) img.loading = 'lazy';
       v.pause();
       v.replaceWith(img);
     });
