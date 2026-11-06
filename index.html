@@ -133,14 +133,16 @@
 
   <!-- HERO: tam ekran video -->
   <section class="hero relative h-[100svh] min-h-[560px] overflow-hidden bg-olive-900 text-cream">
-    <div class="hero-media absolute inset-0">
-      <video class="hero-video h-full w-full object-cover" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="hero-media absolute inset-0 bg-cover bg-center">
+      <video class="hero-video h-full w-full object-cover opacity-0 transition-opacity duration-700" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
       <script>
         // Telefonda dikey kırpılmış hafif sürüm, geniş ekranda 1080p
         (function () {
           var v = document.querySelector('.hero-video');
           var dar = window.matchMedia('(max-width: 767px)').matches;
-          v.poster = dar ? 'assets/hero-poster-mobil.jpg' : 'assets/hero-poster.jpg';
+          v.parentNode.style.backgroundImage = 'url(' + (dar ? 'assets/hero-poster-mobil.jpg' : 'assets/hero-poster.jpg') + ')';
+          v.setAttribute('data-anim', dar ? 'assets/anim/hero-mobil.webp' : 'assets/anim/hero.webp');
+          v.addEventListener('playing', function () { v.classList.remove('opacity-0'); });
           v.src = dar ? 'assets/hero-mobil.mp4' : 'assets/hero.mp4';
         })();
       </script>
@@ -192,7 +194,7 @@
         <!-- Natürel Sızma -->
         <article class="product-card flex flex-col overflow-hidden rounded-[2rem] bg-gold">
           <div class="relative h-80 overflow-hidden md:h-[26rem]">
-            <div class="card-zoom absolute inset-0"><img src="assets/urun-naturel-sizma.jpg" alt="Ege Uysal Natürel Sızma soğuk sıkım zeytinyağı tenekesi, yanında bir kase zeytinyağı ve ekmek" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/urun-naturel-sizma.mp4" type="video/mp4"></video></div>
+            <div class="card-zoom absolute inset-0"><img src="assets/urun-naturel-sizma.jpg" alt="Ege Uysal Natürel Sızma soğuk sıkım zeytinyağı tenekesi, yanında bir kase zeytinyağı ve ekmek" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true" data-anim="assets/anim/urun-naturel-sizma.webp"><source src="assets/urun-naturel-sizma.mp4" type="video/mp4"></video></div>
           </div>
           <div class="flex flex-1 flex-col bg-cream/60 p-6 md:p-7">
             <p class="text-xs font-bold uppercase tracking-[.2em] text-olive-700">Günlük kullanım</p>
@@ -210,7 +212,7 @@
         <!-- Erken Hasat -->
         <article class="product-card flex flex-col overflow-hidden rounded-[2rem] bg-olive-500">
           <div class="relative h-80 overflow-hidden md:h-[26rem]">
-            <div class="card-zoom absolute inset-0"><img src="assets/urun-erken-hasat.jpg" alt="Ege Uysal Erken Hasat soğuk sıkım zeytinyağı şişesi, gün batımında zeytinlikte" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/urun-erken-hasat.mp4" type="video/mp4"></video></div>
+            <div class="card-zoom absolute inset-0"><img src="assets/urun-erken-hasat.jpg" alt="Ege Uysal Erken Hasat soğuk sıkım zeytinyağı şişesi, gün batımında zeytinlikte" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true" data-anim="assets/anim/urun-erken-hasat.webp"><source src="assets/urun-erken-hasat.mp4" type="video/mp4"></video></div>
           </div>
           <div class="flex flex-1 flex-col bg-cream/60 p-6 md:p-7">
             <p class="text-xs font-bold uppercase tracking-[.2em] text-olive-700">Hasadın ilk günleri</p>
@@ -228,7 +230,7 @@
         <!-- Taş Baskı -->
         <article class="product-card flex flex-col overflow-hidden rounded-[2rem] bg-terra">
           <div class="relative h-80 overflow-hidden md:h-[26rem]">
-            <div class="card-zoom absolute inset-0"><img src="assets/urun-tas-baski.jpg" alt="Ege Uysal Taş Baskı natürel sızma zeytinyağı şişesi, eski bir taş değirmenin yanında" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/urun-tas-baski.mp4" type="video/mp4"></video></div>
+            <div class="card-zoom absolute inset-0"><img src="assets/urun-tas-baski.jpg" alt="Ege Uysal Taş Baskı natürel sızma zeytinyağı şişesi, eski bir taş değirmenin yanında" loading="lazy" class="absolute inset-x-0 -top-[4%] h-[108%] w-full object-cover" data-speed="-0.06"><video class="card-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="metadata" aria-hidden="true" data-anim="assets/anim/urun-tas-baski.webp"><source src="assets/urun-tas-baski.mp4" type="video/mp4"></video></div>
           </div>
           <div class="flex flex-1 flex-col bg-cream/60 p-6 md:p-7">
             <p class="text-xs font-bold uppercase tracking-[.2em] text-olive-700">Geleneksel yöntem</p>
@@ -265,11 +267,11 @@
     <!-- Arka plan: her adımın kendi videosu, ekrana sabit; aktif adıma göre yumuşak geçiş -->
     <div class="pointer-events-none absolute inset-0" aria-hidden="true">
       <div class="sticky top-0 h-[100svh] overflow-hidden">
-        <video class="step-video absolute inset-0 h-full w-full object-cover is-on" muted loop playsinline preload="auto" poster="assets/surec-1.jpg"><source src="assets/surec-1.mp4" type="video/mp4"></video>
-        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-2.jpg"><source src="assets/surec-2.mp4" type="video/mp4"></video>
-        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-3.jpg"><source src="assets/surec-3.mp4" type="video/mp4"></video>
-        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-4.jpg"><source src="assets/surec-4.mp4" type="video/mp4"></video>
-        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-5.jpg"><source src="assets/surec-5.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover is-on" muted loop playsinline preload="auto" poster="assets/surec-1.jpg" data-anim="assets/anim/surec-1.webp"><source src="assets/surec-1.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-2.jpg" data-anim="assets/anim/surec-2.webp"><source src="assets/surec-2.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-3.jpg" data-anim="assets/anim/surec-3.webp"><source src="assets/surec-3.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-4.jpg" data-anim="assets/anim/surec-4.webp"><source src="assets/surec-4.mp4" type="video/mp4"></video>
+        <video class="step-video absolute inset-0 h-full w-full object-cover" muted loop playsinline preload="none" poster="assets/surec-5.jpg" data-anim="assets/anim/surec-5.webp"><source src="assets/surec-5.mp4" type="video/mp4"></video>
         <div class="absolute inset-0 bg-olive-900/60"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-olive-900/80 via-olive-900/30 to-olive-900/70"></div>
       </div>
@@ -443,15 +445,37 @@
   story.innerHTML = storyWords.map(function (w) { return '<span class="story-word">' + w + '</span>'; }).join(' ');
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // Videolar: iOS (ör. Düşük Güç Modu) otomatik oynatmayı engellerse,
-  // o an oynaması gereken videolar her dokunuşta yeniden denenir
+  // Videolar. iOS Düşük Güç Modu gibi durumlarda tarayıcı otomatik oynatmayı engeller
+  // (play() "NotAllowedError" verir). O zaman tüm videolar aynı sahnenin hareketli
+  // WebP sürümüyle değiştirilir; hareketli görseller bu modda da kendiliğinden oynar.
   var wanted = [];
+  var animMode = false;
+  function useAnimations() {
+    if (animMode) return;
+    animMode = true;
+    document.querySelectorAll('video[data-anim]').forEach(function (v) {
+      var img = document.createElement('img');
+      img.src = v.getAttribute('data-anim');
+      img.alt = '';
+      img.setAttribute('aria-hidden', 'true');
+      img.className = v.className.replace('opacity-0', '');
+      v.pause();
+      v.replaceWith(img);
+    });
+    // O an ekranda olan kartlar hareketli görseli hemen göstersin
+    document.querySelectorAll('.product-card.in-view').forEach(function (c) { c.classList.add('is-playing'); });
+  }
+  function onPlayError(err) {
+    if (err && err.name === 'NotAllowedError') useAnimations();
+  }
   function want(v) {
+    if (!v.play) return;
     if (wanted.indexOf(v) < 0) wanted.push(v);
     v.muted = true;
-    v.play().catch(function () {});
+    v.play().catch(onPlayError);
   }
   function unwant(v) {
+    if (!v.pause) return;
     var i = wanted.indexOf(v);
     if (i > -1) wanted.splice(i, 1);
     v.pause();
@@ -464,6 +488,7 @@
   });
 
   var heroVideo = document.querySelector('.hero-video');
+  if (!reduce) want(heroVideo);
   if (reduce) {
     heroVideo.removeAttribute('autoplay');
     heroVideo.pause();
@@ -480,11 +505,17 @@
   if (!reduce) {
     var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     document.querySelectorAll('.product-card').forEach(function (card) {
-      var v = card.querySelector('.card-video');
       // Fotoğraf, video gerçekten oynamaya başlayınca kaybolur
-      v.addEventListener('playing', function () { card.classList.add('is-playing'); });
-      function play() { want(v); }
-      function stop() { unwant(v); card.classList.remove('is-playing'); }
+      card.querySelector('.card-video').addEventListener('playing', function () { card.classList.add('is-playing'); });
+      function play() {
+        card.classList.add('in-view');
+        var v = card.querySelector('.card-video');
+        if (v.tagName === 'IMG') { card.classList.add('is-playing'); } else { want(v); }
+      }
+      function stop() {
+        card.classList.remove('in-view', 'is-playing');
+        unwant(card.querySelector('.card-video'));
+      }
       if (canHover) {
         card.addEventListener('mouseenter', play);
         card.addEventListener('mouseleave', stop);
@@ -531,7 +562,7 @@
   gsap.from('.hero-media', { scale: 1.15, duration: 2.4, ease: 'power2.out' });
 
   // Hero: video yavaş, yazı hızlı kayar ve kaybolur
-  gsap.to('.hero-video', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-media', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.to('.hero-content', { yPercent: -25, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
   // Paralaks: data-speed taşıyan her öğe kendi hızında kayar
@@ -576,7 +607,6 @@
     scrollTrigger: { trigger: '.process-list', start: 'top 60%', end: 'bottom 60%', scrub: true }
   });
   var steps = gsap.utils.toArray('.step');
-  var stepVideos = gsap.utils.toArray('.step-video');
   var stepNo = document.querySelector('.current-step-no');
   var stepName = document.querySelector('.current-step-name');
   var shown = -1;
@@ -584,12 +614,13 @@
     var i = Math.max(0, document.querySelectorAll('.step.is-active').length - 1);
     if (i === shown) return;
     shown = i;
+    var stepVideos = document.querySelectorAll('.step-video');
     stepVideos.forEach(function (v, j) {
       v.classList.toggle('is-on', j === i);
       if (j === i) { want(v); } else { unwant(v); }
     });
     // Sıradaki adımın videosunu önceden yüklemeye başla
-    if (stepVideos[i + 1]) stepVideos[i + 1].preload = 'auto';
+    if (stepVideos[i + 1] && stepVideos[i + 1].tagName === 'VIDEO') stepVideos[i + 1].preload = 'auto';
     stepNo.textContent = '0' + (i + 1);
     stepName.textContent = steps[i].querySelector('h3').textContent;
   }
@@ -599,7 +630,7 @@
     start: 'top bottom',
     end: 'bottom top',
     onToggle: function (self) {
-      if (self.isActive) { shown = -1; syncStep(); } else { stepVideos.forEach(function (v) { unwant(v); }); }
+      if (self.isActive) { shown = -1; syncStep(); } else { document.querySelectorAll('.step-video').forEach(function (v) { unwant(v); }); }
     }
   });
   steps.forEach(function (step) {
